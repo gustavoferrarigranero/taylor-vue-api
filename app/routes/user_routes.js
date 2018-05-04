@@ -1,6 +1,17 @@
 var ObjectID = require('mongodb').ObjectID;
 
 module.exports = function (app, db) {
+    app.get('/users/all', (req, res) => {
+        const id = req.params.id;
+        const details = {'_id': new ObjectID(id)};
+        db.collection('users').find().toArray((err, items) => {
+            if (err || !items) {
+                res.send([]);
+            } else {
+                res.send(items);
+            }
+        });
+    });
     app.get('/users/:id', (req, res) => {
         const id = req.params.id;
         const details = {'_id': new ObjectID(id)};

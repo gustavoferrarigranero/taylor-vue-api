@@ -1,3 +1,3 @@
 module.exports = {
-    url : 'mongodb://localhost:27017'
+    url : 'mongodb://' + process.env.MONGODB_ADDRESS + ':27017'
 };
