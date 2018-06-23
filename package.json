@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "MONGODB_ADDRESS=127.0.0.1  nodemon server.js"
   },
   "author": "",
   "license": "ISC",
